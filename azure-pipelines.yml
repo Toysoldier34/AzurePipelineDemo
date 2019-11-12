@@ -17,20 +17,22 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
     echo $(TESTVARIABLE)
+    echo Tony World
   displayName: 'Run a multi-line script'
 
 - script: ls
-  displayName: 'LS '
+    echo Printing directory contents':'
+  displayName: 'LS'
 
 
 - task: Bash@3
   inputs:
-    filePath: 'BashDemo.sh'
-    workingDirectory: src
+    filePath: '/BashDemo.sh'
+    #workingDirectory: src
   displayName: 'Run Bash Script File from yml'
 
 - task: Bash@3
   inputs:
     filePath: 'BashDemo.sh'
-    #workingDirectory: src
-    workingDirectory: 'https://github.com/Toysoldier34/AzurePipelineDemo/'
+    workingDirectory: src
+    #workingDirectory: 'https://github.com/Toysoldier34/AzurePipelineDemo/'
