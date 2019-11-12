@@ -20,19 +20,20 @@ steps:
     echo Tony World
   displayName: 'Run a multi-line script'
 
-- script: ls
+- script: |
+    ls
     echo Printing directory contents':'
   displayName: 'LS'
 
 
 - task: Bash@3
   inputs:
-    filePath: '/BashDemo.sh'
-    #workingDirectory: src
-  displayName: 'Run Bash Script File from yml'
+    filePath: '\BashDemo.sh'
+  displayName: 'Run BashDemo Script File from yml'
 
 - task: Bash@3
   inputs:
+    script: echo TestWorkingYAMLBASH Tony
     filePath: 'BashDemo.sh'
     workingDirectory: src
     #workingDirectory: 'https://github.com/Toysoldier34/AzurePipelineDemo/'
