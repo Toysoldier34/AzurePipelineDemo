@@ -22,25 +22,32 @@ steps:
 
 - script: |
     pwd
-    ls
     echo Printing directory contents':'
+    ls
   displayName: 'LS'
 
 - task: ShellScript@2
   inputs:
     scriptPath: BashDemo.sh
+  displayName: 'Shell scriptPath'
 
 - task: Bash@3
   inputs:
     targetType: filePath
     filePath: 'BashDemo.sh'
-    script: BasheDemo.sh
-  displayName: 'Run BashDemo Script File from yml'
+    #script: BasheDemo.sh
+  displayName: 'Run BashDemo FilePath Script File from yml'
+
+- task: Bash@3
+  inputs:
+    script: BashDemo.sh
+  displayName: 'Run just Script File from yml'
 
 - task: Bash@3
   inputs:
     targetType: inline
     script: echo "TestWorkingYAMLBASH Tony"
+  displayName: 'Bash inline Echo'
 
 - bash: BashDemo.sh
 
