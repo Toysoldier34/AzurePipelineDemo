@@ -28,12 +28,13 @@ steps:
 
 - task: Bash@3
   inputs:
-    filePath: '\BashDemo.sh'
+    filePath: '/BashDemo.sh'
+    targetType: filePath
   displayName: 'Run BashDemo Script File from yml'
 
 - task: Bash@3
   inputs:
-    script: echo TestWorkingYAMLBASH Tony
-    filePath: 'BashDemo.sh'
-    workingDirectory: src
-    #workingDirectory: 'https://github.com/Toysoldier34/AzurePipelineDemo/'
+    script: echo "TestWorkingYAMLBASH Tony"
+    targetType: inline
+
+- bash: BashDemo.sh
