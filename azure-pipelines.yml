@@ -8,54 +8,55 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
-
-#Example single in line script
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-#Example multi in line script
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-    echo $(TESTVARIABLE)
-    echo Tony World
-  displayName: 'Run a multi-line script'
-
-#Directory information
-- script: |
-    pwd
-    echo Printing directory contents':'
-    ls
-  displayName: 'PWD LS'
-
-#Example Which Bash inline script
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'which bash'
-  displayName: 'Which Bash'
-
-#Example run shell .sh file
-- task: ShellScript@2
-  inputs:
-    scriptPath: BashDemo.sh
-  displayName: 'Shell scriptPath'
-
-#Example run bash .sh file
-- task: Bash@3
-  inputs:
-    targetType: filePath
-    filePath: 'BashDemo.sh'
-  displayName: 'Run BashDemo FilePath Script File from yml'
-
-
-
 jobs:
 - job: string
-  pool: server
-#Invoke Azure Function HTTP GET Request to square given number
+
   steps:
+  #Example single in line script
+  - script: echo Hello, world!
+    displayName: 'Run a one-line script'
+
+  #Example multi in line script
+  - script: |
+      echo Add other tasks to build, test, and deploy your project.
+      echo See https://aka.ms/yaml
+      echo $(TESTVARIABLE)
+      echo Tony World
+    displayName: 'Run a multi-line script'
+
+  #Directory information
+  - script: |
+      pwd
+      echo Printing directory contents':'
+      ls
+    displayName: 'PWD LS'
+
+  #Example Which Bash inline script
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: 'which bash'
+    displayName: 'Which Bash'
+
+  #Example run shell .sh file
+  - task: ShellScript@2
+    inputs:
+      scriptPath: BashDemo.sh
+    displayName: 'Shell scriptPath'
+
+  #Example run bash .sh file
+  - task: Bash@3
+    inputs:
+      targetType: filePath
+      filePath: 'BashDemo.sh'
+    displayName: 'Run BashDemo FilePath Script File from yml'
+
+
+- job: string
+  pool: server
+  steps:
+
+  #Invoke Azure Function HTTP GET Request to square given number
   - task: AzureFunction@1
     inputs:
       function: 'https://wmttonythompson.azurewebsites.us/api/NumSquaredCalc'
