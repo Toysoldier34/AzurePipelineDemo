@@ -9,10 +9,12 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+#Example single in line script
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+#Example multi in line script
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
@@ -20,35 +22,51 @@ steps:
     echo Tony World
   displayName: 'Run a multi-line script'
 
+#Directory information
 - script: |
     pwd
     echo Printing directory contents':'
     ls
-  displayName: 'LS'
+  displayName: 'PWD LS'
 
+#Which Bash
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'which bash'
+
+#Example run shell .sh file
 - task: ShellScript@2
   inputs:
     scriptPath: BashDemo.sh
   displayName: 'Shell scriptPath'
 
+#Example run bash .sh file
 - task: Bash@3
   inputs:
     targetType: filePath
     filePath: 'BashDemo.sh'
-    #script: BasheDemo.sh
   displayName: 'Run BashDemo FilePath Script File from yml'
 
+#Not valid to run bash file
 - task: Bash@3
   inputs:
     script: BashDemo.sh
   displayName: 'Run just Script File from yml'
 
+#Not working in line bash
 - task: Bash@3
   inputs:
     targetType: inline
     script: echo "TestWorkingYAMLBASH Tony"
   displayName: 'Bash inline Echo'
 
+#Not working bash shortcut
 - bash: BashDemo.sh
 
+#Not working bash shortcut
 - bash: echo "In line Bash command test"
+
+
+
+
