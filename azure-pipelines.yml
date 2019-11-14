@@ -60,7 +60,7 @@ jobs:
   - task: AzureFunction@1
     inputs:
       function: 'https://wmttonythompson.azurewebsites.us/api/NumSquaredCalc'
-      key: 'wHWwjBXSmZD3PszFwfFNC1agRqOeBqghMF5FNqCth9UNMUw2r0xvw=='
+      key: '/wHWwjBXSmZD3PszFwfFNC1agRqOeBqghMF5FNqCth9UNMUw2r0xvw=='
       method: 'GET'
       #queryParameters: 'number=5'
       waitForCompletion: 'false'
