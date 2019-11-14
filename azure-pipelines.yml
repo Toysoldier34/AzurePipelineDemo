@@ -38,11 +38,7 @@ jobs:
       script: 'which bash'
     displayName: 'Which Bash'
 
-  #Wait timer
-  - task: Delay@1
-    inputs:
-      delayForMinutes: '0.1'
-
+ 
   #Example run shell .sh file
   - task: ShellScript@2
     inputs:
@@ -70,5 +66,11 @@ jobs:
       queryParameters: 'number=5'
       waitForCompletion: 'false'
     displayName: 'Square Num Azure Function'
+
+   #Wait timer
+  - task: Delay@1
+    inputs:
+      delayForMinutes: '0.1'
+
 
 
