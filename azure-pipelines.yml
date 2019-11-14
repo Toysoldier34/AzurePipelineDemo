@@ -67,10 +67,7 @@ jobs:
       waitForCompletion: 'false'
     displayName: 'Square Num Azure Function'
 
-   #Wait timer
-  - task: Delay@1
-    inputs:
-      delayForMinutes: '0.1'
+ 
 
 
 
