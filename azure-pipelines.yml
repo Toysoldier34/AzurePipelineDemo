@@ -9,7 +9,7 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 jobs:
-- job: string
+- job: Scripts
 
   steps:
   #Example single in line script
@@ -52,7 +52,7 @@ jobs:
     displayName: 'Run BashDemo FilePath Script File from yml'
 
 
-- job: string
+- job: AzureFunctionsOnServer
   pool: server
   steps:
 
