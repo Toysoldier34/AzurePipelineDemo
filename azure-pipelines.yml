@@ -63,7 +63,7 @@ jobs:
       key: 'wHWwjBXSmZD3PszFwfFNC1agRqOeBqghMF5FNqCth9UNMUw2r0xvw=='
       method: 'GET'
       queryParameters: 'number=5'
-      waitForCompletion: 'true'
+      waitForCompletion: 'false'
     displayName: 'Square Num Azure Function'
 
 
