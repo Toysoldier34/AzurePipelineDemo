@@ -29,11 +29,12 @@ steps:
     ls
   displayName: 'PWD LS'
 
-#Which Bash
+#Example Which Bash inline script
 - task: Bash@3
   inputs:
     targetType: 'inline'
     script: 'which bash'
+  displayName: 'Which Bash'
 
 #Example run shell .sh file
 - task: ShellScript@2
@@ -48,24 +49,7 @@ steps:
     filePath: 'BashDemo.sh'
   displayName: 'Run BashDemo FilePath Script File from yml'
 
-#Not valid to run bash file
-- task: Bash@3
-  inputs:
-    script: BashDemo.sh
-  displayName: 'Run just Script File from yml'
 
-#Not working in line bash
-- task: Bash@3
-  inputs:
-    targetType: inline
-    script: echo "TestWorkingYAMLBASH Tony"
-  displayName: 'Bash inline Echo'
-
-#Not working bash shortcut
-- bash: BashDemo.sh
-
-#Not working bash shortcut
-- bash: echo "In line Bash command test"
 
 
 
