@@ -49,6 +49,11 @@ steps:
     filePath: 'BashDemo.sh'
   displayName: 'Run BashDemo FilePath Script File from yml'
 
+
+
+jobs:
+- job: string
+  pool: server
 #Invoke Azure Function HTTP GET Request to square given number
 - task: AzureFunction@1
   inputs:
