@@ -62,7 +62,7 @@ jobs:
       function: 'https://wmttonythompson.azurewebsites.us/api/NumSquaredCalc'
       key: '/wHWwjBXSmZD3PszFwfFNC1agRqOeBqghMF5FNqCth9UNMUw2r0xvw=='
       method: 'GET'
-      #queryParameters: 'number=5'
+      queryParameters: 'number=5'
       waitForCompletion: 'false'
     displayName: 'Square Num Azure Function'
 
