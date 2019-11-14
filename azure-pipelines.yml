@@ -55,13 +55,14 @@ jobs:
 - job: string
   pool: server
 #Invoke Azure Function HTTP GET Request to square given number
-- task: AzureFunction@1
-  inputs:
-    function: 'https://wmttonythompson.azurewebsites.us/api/NumSquaredCalc'
-    key: 'wHWwjBXSmZD3PszFwfFNC1agRqOeBqghMF5FNqCth9UNMUw2r0xvw=='
-    method: 'GET'
-    queryParameters: 'number=5'
-    waitForCompletion: 'true'
-  displayName: 'Square Num Azure Function'
+  steps:
+  - task: AzureFunction@1
+    inputs:
+      function: 'https://wmttonythompson.azurewebsites.us/api/NumSquaredCalc'
+      key: 'wHWwjBXSmZD3PszFwfFNC1agRqOeBqghMF5FNqCth9UNMUw2r0xvw=='
+      method: 'GET'
+      queryParameters: 'number=5'
+      waitForCompletion: 'true'
+    displayName: 'Square Num Azure Function'
 
 
