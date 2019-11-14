@@ -38,6 +38,11 @@ jobs:
       script: 'which bash'
     displayName: 'Which Bash'
 
+  #Wait timer
+  - task: Delay@1
+    inputs:
+      delayForMinutes: '0.1'
+
   #Example run shell .sh file
   - task: ShellScript@2
     inputs:
@@ -51,7 +56,7 @@ jobs:
       filePath: 'BashDemo.sh'
     displayName: 'Run BashDemo FilePath Script File from yml'
 
-
+#Pool server required to run Azure Functions
 - job: AzureFunctionsOnServer
   pool: server
   steps:
